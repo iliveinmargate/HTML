@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NitrousMusic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f1f4f 0%, #2d2d85 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            width: 320px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        .login-card h1 {
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .login-card label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .login-card input {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+        .login-card input:focus {
+            outline: none;
+            border-color: #a4c8ff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .login-card button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #5c9cff;
+            color: #1f1f4f;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .login-card button:hover {
+            background: #7ab6ff;
+        }
+        #message {
+            margin-top: 14px;
+            min-height: 24px;
+            text-align: center;
+        }
+        .link-row {
+            margin-top: 18px;
+            text-align: center;
+        }
+        .link-row a {
+            color: #dbe6ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Enter username" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter password" required minlength="6">
+
+            <button type="submit">Log In</button>
+        </form>
+        <div id="message"></div>
+        <div class="link-row">
+            <a href="tesxHome.html">Back to home</a>
+        </div>
+    </div>
+
+    <script>
+        const validUser = "NitrousUser";
+        const validPassword = "pass1234";
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            if (!username || !password) {
+                message.textContent = "Please enter both username and password.";
+                message.style.color = "#ffd2d2";
+                return;
+            }
+
+            if (username === validUser && password === validPassword) {
+                message.textContent = "Login successful! Welcome.";
+                message.style.color = "#c7ffca";
+            } else {
+                message.textContent = "Incorrect username or password.";
+                message.style.color = "#ffd2d2";
+            }
+        });
+    </script>
+</body>
+</html>

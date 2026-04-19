@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Web Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .tab-buttons {
+            display: flex;
+            background-color: #f0f0f0;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .tab-button.active {
+            background-color: white;
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+Start Over
+create a web page with diferent tabs html css and java script in visual studio
+
+Planned tabbed interface for HTML, CSS, and JavaScript
+
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .tab-content h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .tab-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .tab-content code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #d63384;
+            font-family: 'Courier New', monospace;
+        }
+
+        .code-block {
+            background-color: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="openTab(event, 'html')">HTML</button>
+            <button class="tab-button" onclick="openTab(event, 'css')">CSS</button>
+            <button class="tab-button" onclick="openTab(event, 'javascript')">JavaScript</button>
+        </div>
+
+        <!-- HTML Tab -->
+        <div id="html" class="tab-content active">
+            <h2>📄 HTML (HyperText Markup Language)</h2>
+            <p>HTML is the standard markup language for creating web pages. It provides the structure and content of a website.</p>
+            
+            <h3 style="color: #555; margin-top: 20px;">Key Elements:</h3>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code> - Declares the document type</li>
+                <li><code>&lt;html&gt;</code> - Root element</li>
+                <li><code>&lt;head&gt;</code> - Contains metadata</li>
+                <li><code>&lt;body&gt;</code> - Contains page content</li>
+                <li><code>&lt;div&gt;</code> - Container for grouping elements</li>
+                <li><code>&lt;p&gt;</code> - Paragraph</li>
+                <li><code>&lt;h1&gt; to &lt;h6&gt;</code> - Headings</li>
+            </ul>
+
+            <div class="code-block">
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+        </div>
+
+        <!-- CSS Tab -->
+        <div id="css" class="tab-content">
+            <h2>🎨 CSS (Cascading Style Sheets)</h2>
+            <p>CSS is used to style and layout web pages — for example, to alter the font, color, size, and spacing of your content.</p>
+            
+            <h3 style="color: #555; margin-top: 20px;">Key Concepts:</h3>
+            <ul>
+                <li><strong>Selectors</strong> - Target HTML elements</li>
+                <li><strong>Properties</strong> - Define what to style</li>
+                <li><strong>Values</strong> - Specify how to style</li>
+                <li><strong>Box Model</strong> - Margin, border, padding, content</li>
+                <li><strong>Flexbox</strong> - Flexible layouts</li>
+                <li><strong>Grid</strong> - Advanced layouts</li>
+            </ul>
+
+            <div class="code-block">
+                <pre>/* Selector with properties */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+}
+
+h1 {
+  color: #667eea;
+  font-size: 32px;
+}</pre>
+            </div>
+        </div>
+
+        <!-- JavaScript Tab -->
+        <div id="javascript" class="tab-content">
+            <h2>⚙️ JavaScript</h2>
+            <p>JavaScript is a programming language that enables interactive web pages and is an essential part of web applications.</p>
+            
+            <h3 style="color: #555; margin-top: 20px;">Key Features:</h3>
+            <ul>
+                <li><strong>Variables</strong> - Store data</li>
+                <li><strong>Functions</strong> - Reusable code blocks</li>
+                <li><strong>Events</strong> - Respond to user actions</li>
+                <li><strong>DOM Manipulation</strong> - Change HTML content</li>
+                <li><strong>Loops & Conditionals</strong> - Control flow</li>
+                <li><strong>Objects & Arrays</strong> - Data structures</li>
+            </ul>
+
+            <div class="code-block">
+                <pre>// Function example
+function openTab(evt, tabName) {
+  // Hide all content
+  let content = document.querySelectorAll('.tab-content');
+  content.forEach(el => el.classList.remove('active'));
+  
+  // Show selected tab
+  document.getElementById(tabName).classList.add('active');
+  
+  // Highlight active button
+  let buttons = document.querySelectorAll('.tab-button');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  evt.currentTarget.classList.add('active');
+}
+
+// Event listener
+document.addEventListener('click', function(event) {
+  console.log('Page clicked!');
+});</pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab content
+            let tabContent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+
+            // Remove active class from all buttons
+            let tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            // Show the current tab content
+            document.getElementById(tabName).classList.add("active");
+
+            // Add active class to clicked button
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
